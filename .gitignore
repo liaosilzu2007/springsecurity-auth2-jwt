@@ -1,2 +1,4 @@
 # Project exclude paths
 /springsecurity/target/
+.idea
+springsecurity-auth2-jwt.iml

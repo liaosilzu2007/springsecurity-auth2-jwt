@@ -3,9 +3,12 @@ package com.lzumetal.springsecurity.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author liaosi
@@ -23,6 +26,8 @@ public class SysUser implements UserDetails {
 
     private String nickname;
 
+    private Set<GrantedAuthority> authorities;
+
 
     public SysUser() {
     }
@@ -34,9 +39,25 @@ public class SysUser implements UserDetails {
         this.nickname = nickname;
     }
 
+
+    /**
+     * 设置用户的权限
+     *
+     * @param set
+     */
+    public void buildAuthorities(Set<String> set) {
+        if (set != null) {
+            authorities = new HashSet<>();
+            for (String s : set) {
+                authorities.add(new SimpleGrantedAuthority(s));
+            }
+        }
+    }
+
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return this.authorities;
     }
 
     @Override
