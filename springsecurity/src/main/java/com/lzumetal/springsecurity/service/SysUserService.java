@@ -26,12 +26,12 @@ public class SysUserService {
                 "zhangsan",
                 "$2a$10$2A9boPmN4EQiah93ypuNNuJV1lSb9bMVigsOhAjI8s2yOP0u5r2W2", //密码是123，BCryptPasswordEncoder加密
                 "张三"));
-        usersFromDb.add(new SysUser(1,
+        usersFromDb.add(new SysUser(2,
                 "lisi",
                 "$2a$10$ddbqmCp1WZJlDXVxBdlFH.l2keTK1fGfG5yt4OX8YUDgTF4fs2iGO", //密码是456，BCryptPasswordEncoder加密
                 "李四"));
-        permissions.put(1, Sets.newHashSet("ROLE_ADMIN", "ROLE_TEST", "write"));
-        permissions.put(2, Sets.newHashSet("ROLE_USER", "ROLE_TEST", "read"));
+        permissions.put(1, Sets.newHashSet("ROLE_ADMIN", "test", "write"));
+        permissions.put(2, Sets.newHashSet("ROLE_USER", "test", "read"));
     }
 
 

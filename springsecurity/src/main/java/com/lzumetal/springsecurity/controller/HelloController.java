@@ -16,4 +16,10 @@ public class HelloController {
         return "hello";
     }
 
+
+    @RequestMapping("/admin")
+    public String admin() {
+        return "hello admin";
+    }
+
 }
