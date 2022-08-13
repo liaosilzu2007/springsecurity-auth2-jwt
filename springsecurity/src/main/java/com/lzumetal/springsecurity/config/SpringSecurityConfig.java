@@ -47,8 +47,16 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                    permitAll(): 不管已登录或未登录都能访问（Always evaluates to true ）
                  */
                 //antMatchers中的参数必须以/开头，**代表多级，*代表一级
+                //.antMatchers("/**/user/login").access("permitAll")
                 .antMatchers("/**/user/login").anonymous()
                 .antMatchers("/**/admin").hasRole("ADMIN")
+//                .antMatchers("/test1").hasRole("ADMIN")
+//                .antMatchers("/test2").access("hasRole('ROLE_ADMIN')")
+//                .antMatchers("/test3").hasAnyRole("AMDIN", "USER")
+//                .antMatchers("/test4").access("hasRole('ROLE_USER') or hasRole('ROLE_SUPER')")
+//                .antMatchers("/test5").hasAuthority("read")
+//                .antMatchers("/test6").access("hasAuthority('read')")
+//                .antMatchers("/test7").hasAnyAuthority("read", "write")
 
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated()
@@ -58,7 +66,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
 
 //                .exceptionHandling()
-//                .accessDeniedHandler()
+//                .accessDeniedHandler(new MyAccessDeniedHandler())
+//                .authenticationEntryPoint(new MyAuthenticationEntryPoint())
         ;
 
     }

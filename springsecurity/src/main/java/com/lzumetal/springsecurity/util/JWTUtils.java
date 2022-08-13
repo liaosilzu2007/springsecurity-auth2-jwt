@@ -1,6 +1,7 @@
 package com.lzumetal.springsecurity.util;
 
 import io.jsonwebtoken.*;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
@@ -9,6 +10,7 @@ import java.util.Date;
  * @author liaosi
  * @date 2022-08-06
  */
+@Slf4j
 public class JWTUtils {
 
     public static void main(String[] args) {
@@ -45,8 +47,6 @@ public class JWTUtils {
     }
 
 
-
-
     /**
      * 根据token获取用户id
      *
@@ -61,7 +61,7 @@ public class JWTUtils {
             Claims claims = claimsJws.getBody();
             return (String) claims.get("userId");
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("token解析异常|{}", jwtToken, e);
             return null;
         }
     }
