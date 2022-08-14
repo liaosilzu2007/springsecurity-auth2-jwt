@@ -11,7 +11,9 @@
     </parent>
 
     <modules>
-        <module>springsecurity</module>
+        <module>springsecurity-jwt</module>
+        <module>springsecurity-oauth2-resourceserver</module>
+        <module>springsecurity-oauth2-authserver</module>
     </modules>
 
     <groupId>com.lzumetal</groupId>
@@ -45,6 +47,11 @@
                 <version>${spring-boot-starter.verion}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-oauth2</artifactId>
+                <version>${spring-boot-starter.verion}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
