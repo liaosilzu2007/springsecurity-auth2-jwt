@@ -1,6 +1,6 @@
 package com.lzumetal.springsecurity.jwt.controller;
 
-import com.lzumetal.springsecurity.jwt.common.ResponseData;
+import com.lzumetal.springsecurity.core.ResponseData;
 import com.lzumetal.springsecurity.jwt.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

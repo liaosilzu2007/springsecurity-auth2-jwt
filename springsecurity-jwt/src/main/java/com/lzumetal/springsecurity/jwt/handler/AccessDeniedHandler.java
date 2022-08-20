@@ -1,7 +1,7 @@
 package com.lzumetal.springsecurity.jwt.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lzumetal.springsecurity.jwt.common.ResponseData;
+import com.lzumetal.springsecurity.core.ResponseData;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;

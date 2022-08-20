@@ -1,4 +1,4 @@
-package com.lzumetal.springsecurity.jwt.common;
+package com.lzumetal.springsecurity.core;
 
 /**
  * @author liaosi

@@ -1,7 +1,7 @@
 package com.lzumetal.springsecurity.jwt.handler;
 
-import com.lzumetal.springsecurity.jwt.common.ResponseData;
-import com.lzumetal.springsecurity.jwt.common.ServiceException;
+import com.lzumetal.springsecurity.core.ResponseData;
+import com.lzumetal.springsecurity.core.ServiceException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

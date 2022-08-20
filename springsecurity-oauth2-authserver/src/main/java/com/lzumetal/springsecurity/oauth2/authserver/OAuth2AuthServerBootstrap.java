@@ -1,4 +1,4 @@
-package com.lzumetal.springsecurity.jwt.oauth2.authserver;
+package com.lzumetal.springsecurity.oauth2.authserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

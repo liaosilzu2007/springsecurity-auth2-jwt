@@ -1,4 +1,4 @@
-package com.lzumetal.springsecurity.jwt.oauth2.resourceserver;
+package com.lzumetal.springsecurity.oauth2.resourceserver;
 
 /**
  * @author liaosi

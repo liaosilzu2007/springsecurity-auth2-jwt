@@ -1,7 +1,7 @@
 package com.lzumetal.springsecurity.jwt.fillter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lzumetal.springsecurity.jwt.common.ResponseData;
+import com.lzumetal.springsecurity.core.ResponseData;
 import com.lzumetal.springsecurity.jwt.entity.SysUser;
 import com.lzumetal.springsecurity.jwt.service.SysUserService;
 import com.lzumetal.springsecurity.jwt.util.JWTUtils;

@@ -1,6 +1,6 @@
 package com.lzumetal.springsecurity.jwt.service;
 
-import com.lzumetal.springsecurity.jwt.common.ServiceException;
+import com.lzumetal.springsecurity.core.ServiceException;
 import com.lzumetal.springsecurity.jwt.entity.SysUser;
 import com.lzumetal.springsecurity.jwt.util.JWTUtils;
 import org.springframework.beans.factory.annotation.Autowired;
