@@ -34,7 +34,6 @@ public class OAuth2AuthServerConfig extends AuthorizationServerConfigurerAdapter
     private AuthenticationManager authenticationManager;
 
 
-
     @Bean
     public TokenStore tokenStore() {
         return new JdbcTokenStore(dataSource);
@@ -42,7 +41,6 @@ public class OAuth2AuthServerConfig extends AuthorizationServerConfigurerAdapter
 
 
     @Override
-    //配置令牌端点的安全约束
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         //允许表单登录
         security
@@ -51,7 +49,6 @@ public class OAuth2AuthServerConfig extends AuthorizationServerConfigurerAdapter
 
 
     @Override
-    //配置授权以及令牌的访问端点和令牌服务
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         //数据库存储
         endpoints
@@ -63,12 +60,18 @@ public class OAuth2AuthServerConfig extends AuthorizationServerConfigurerAdapter
                 .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
     }
 
+    /**
+     * 跟ClientDetails相关的配置
+     *
+     * @param clients
+     * @throws Exception
+     */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.jdbc(dataSource).passwordEncoder(passwordEncoder);
+        clients.jdbc(dataSource)    //ClientDetails数据保存在数据库，默认是oauth_client_details表
+                .passwordEncoder(passwordEncoder)  //oauth_client_details表中client_secret字段的加密类
+        ;
     }
-
-
 
 
 }

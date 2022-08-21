@@ -26,6 +26,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
 
 
+    /**
+     * Spring Security用户名密码登录的密码加密器
+     *
+     * @return
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -41,16 +46,18 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userDetailsService) //使用自定义的UserDetailsService加载用户（UserDetails）信息
+                .passwordEncoder(passwordEncoder());    //密码加密
     }
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .csrf().disable()   //关闭csrf
-                //取消oauth2授权相关接口的拦截
+                //Spring Security将oauth2授权相关接口放行，由oauth2去进行验证
                 .authorizeRequests().antMatchers("/oauth/**").permitAll()
         ;
     }
+
+
 }

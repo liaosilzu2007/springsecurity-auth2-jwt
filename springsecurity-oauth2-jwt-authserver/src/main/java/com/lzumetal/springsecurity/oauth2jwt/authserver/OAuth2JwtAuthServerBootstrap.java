@@ -1,18 +1,17 @@
-package com.lzumetal.springsecurity.oauth2.resourceserver;
+package com.lzumetal.springsecurity.oauth2jwt.authserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author liaosi
- * @date 2022-08-14
+ * @date 2022-08-21
  */
 @SpringBootApplication
-public class OAuth2ResourceServerBootstrap {
-
+public class OAuth2JwtAuthServerBootstrap {
 
     public static void main(String[] args) {
-        SpringApplication.run(OAuth2ResourceServerBootstrap.class, args);
+        SpringApplication.run(OAuth2JwtAuthServerBootstrap.class, args);
     }
 
 }

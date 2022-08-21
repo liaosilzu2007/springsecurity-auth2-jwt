@@ -51,7 +51,9 @@ public class SysUser implements UserDetails {
      */
     public void buildAuthorities(Set<String> set) {
         if (set != null) {
-            authorities = new HashSet<>();
+            if (authorities == null) {
+                authorities = new HashSet<>();
+            }
             for (String s : set) {
                 authorities.add(new SimpleGrantedAuthority(s));
             }
